@@ -4,7 +4,8 @@
  */
 package edu.unl.cc.tallerpoou2.modelo;
 
-import java.time.LocalDate;
+
+import java.util.Date;
 
 /**
  *
@@ -12,7 +13,7 @@ import java.time.LocalDate;
  */
 public class Vehiculo {
     private String placa;
-    private float capacidadCarga;
+    private float capacidadCargaKg;
     private float consumoCombustible;
-    private LocalDate fechaMantenimiento;    
+    private Date fechaMantenimiento;
 }

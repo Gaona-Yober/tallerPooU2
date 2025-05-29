@@ -8,6 +8,6 @@ package edu.unl.cc.tallerpoou2.modelo;
  *
  * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
-public class Moto {
-    
+public class Moto extends edu.unl.cc.tallerpoou2.modelo.Vehiculo {
+    private float cc;
 }

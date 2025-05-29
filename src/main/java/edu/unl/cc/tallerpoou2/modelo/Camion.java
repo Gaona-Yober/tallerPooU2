@@ -8,6 +8,7 @@ package edu.unl.cc.tallerpoou2.modelo;
  *
  * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
-public class Camion {
+public class Camion extends edu.unl.cc.tallerpoou2.modelo.Vehiculo {
+    private int numeroEjes;
     
 }

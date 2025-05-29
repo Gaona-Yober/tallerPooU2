@@ -8,6 +8,7 @@ package edu.unl.cc.tallerpoou2.modelo;
  *
  * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
-public class Camioneta {
+public class Camioneta extends edu.unl.cc.tallerpoou2.modelo.Vehiculo {
+    private boolean dobleTraccion;
     
 }
