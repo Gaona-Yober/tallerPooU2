@@ -9,9 +9,6 @@ public class Viaje {
 
 
 
-
-
-
     public void costoViaje(Vehiculo v){
         float costo;
         costo = distanciaRecorrida * v.precioCombustible;
