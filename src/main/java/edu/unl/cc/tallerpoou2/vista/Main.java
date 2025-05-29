@@ -6,7 +6,7 @@ package edu.unl.cc.tallerpoou2.vista;
 
 /**
  *
- * @author HP Elite Book
+ * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
 public class Main {
     

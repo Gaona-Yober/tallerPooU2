@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Wilson Palma
+ * @author author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
 public class Vehiculo {
     private String placa;

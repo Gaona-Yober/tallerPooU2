@@ -6,7 +6,7 @@ package edu.unl.cc.tallerpoou2;
 
 /**
  *
- * @author HP Elite Book
+ * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
 public class TallerPooU2 {
 

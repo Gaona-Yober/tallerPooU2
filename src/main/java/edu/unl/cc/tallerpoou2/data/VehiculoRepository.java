@@ -6,7 +6,7 @@ package edu.unl.cc.tallerpoou2.data;
 
 /**
  *
- * @author HP Elite Book
+ * @author author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
 public class VehiculoRepository {
     
