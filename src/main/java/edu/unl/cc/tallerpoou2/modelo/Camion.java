@@ -4,11 +4,35 @@
  */
 package edu.unl.cc.tallerpoou2.modelo;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
-public class Camion extends edu.unl.cc.tallerpoou2.modelo.Vehiculo {
+public class Camion extends Vehiculo {
+
+    //atributos
     private int numeroEjes;
-    
+
+    //contructor
+    public Camion(float capacidadCarga, String placa, float consumoCombustible, LocalDate fechaMantenimiento, int numeroEjes) {
+        super(capacidadCarga, placa, consumoCombustible, fechaMantenimiento);
+        this.numeroEjes = numeroEjes;
+    }
+
+    //get and set
+    public int getNumeroEjes() {
+        return numeroEjes;
+    }
+    public void setNumeroEjes(int numeroEjes) {
+        this.numeroEjes = numeroEjes;
+    }
+
+    @Override
+    public String toString() {
+        return "Camion{" +
+                "numeroEjes=" + numeroEjes +
+                '}';
+    }
 }
