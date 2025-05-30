@@ -8,6 +8,18 @@ package edu.unl.cc.tallerpoou2.vista;
  *
  * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
+
+package gestor_flota_vehiculos;
+
+import gestor_flota_vehiculos.business.VehiculoFacade;
+import gestor_flota_vehiculos.data.VehiculoRepository;
+import gestor_flota_vehiculos.vista.VehiculoView;
+
 public class Main {
-    
+    public static void main(String[] args) {
+        VehiculoRepository repository = new VehiculoRepository();
+        VehiculoFacade facade = new VehiculoFacade(repository);
+        VehiculoView view = new VehiculoView(facade);
+        view.mostrarMenu();
+    }
 }
