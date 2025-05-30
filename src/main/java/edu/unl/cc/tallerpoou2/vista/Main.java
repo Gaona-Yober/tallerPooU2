@@ -9,11 +9,10 @@ package edu.unl.cc.tallerpoou2.vista;
  * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
 
-package gestor_flota_vehiculos;
 
-import gestor_flota_vehiculos.business.VehiculoFacade;
-import gestor_flota_vehiculos.data.VehiculoRepository;
-import gestor_flota_vehiculos.vista.VehiculoView;
+import edu.unl.cc.tallerpoou2.business.VehiculoFacade;
+import edu.unl.cc.tallerpoou2.data.VehiculoRepository;
+import edu.unl.cc.tallerpoou2.vista.VehiculoView;
 
 public class Main {
     public static void main(String[] args) {

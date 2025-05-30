@@ -1,10 +1,10 @@
-package gestor_flota_vehiculos.vista;
+package edu.unl.cc.tallerpoou2.vista;
 
-import gestor_flota_vehiculos.business.VehiculoFacade;
-import gestor_flota_vehiculos.modelo.Camion;
-import gestor_flota_vehiculos.modelo.Camioneta;
-import gestor_flota_vehiculos.modelo.Moto;
-import gestor_flota_vehiculos.modelo.Vehiculo;
+import edu.unl.cc.tallerpoou2.business.VehiculoFacade;
+import edu.unl.cc.tallerpoou2.modelo.Camion;
+import edu.unl.cc.tallerpoou2.modelo.Camioneta;
+import edu.unl.cc.tallerpoou2.modelo.Moto;
+import edu.unl.cc.tallerpoou2.modelo.Vehiculo;
 
 import java.time.LocalDate;
 import java.util.Scanner;
