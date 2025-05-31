@@ -18,7 +18,9 @@ public class Camioneta extends Vehiculo {
     private boolean es4x4;
 
     //constructor
-    public Camioneta(float capacidadCarga, String placa, float consumoCombustible, LocalDate fechaMantenimiento, boolean es4x4) {
+    public Camioneta(float capacidadCarga, String placa,
+                     float consumoCombustible, LocalDate fechaMantenimiento,
+                     boolean es4x4) {
         super(capacidadCarga, placa, consumoCombustible, fechaMantenimiento);
         this.es4x4 = es4x4;
     }
@@ -33,6 +35,7 @@ public class Camioneta extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Camioneta | " + super.toString()+ " | 4x4: " + (es4x4 ? "Sí" : "No");
+        return "Camioneta | " +
+                super.toString()+ " | 4x4: " + (es4x4 ? "Sí" : "No");
     }
 }
