@@ -18,7 +18,9 @@ public class Camion extends Vehiculo {
     private int numeroEjes;
 
     //contructor
-    public Camion(float capacidadCarga, String placa, float consumoCombustible, LocalDate fechaMantenimiento, int numeroEjes) {
+    public Camion(float capacidadCarga, String placa,
+                  float consumoCombustible,
+                  LocalDate fechaMantenimiento, int numeroEjes) {
         super(capacidadCarga, placa, consumoCombustible, fechaMantenimiento);
         this.numeroEjes = numeroEjes;
     }
@@ -33,6 +35,7 @@ public class Camion extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Camión | " + super.toString() + " | Ejes: " + numeroEjes;
+        return "Camión | " +
+                super.toString() + " | Ejes: " + numeroEjes;
     }
 }
