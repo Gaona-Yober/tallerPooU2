@@ -8,7 +8,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>24</maven.compiler.release>
-        <exec.mainClass>edu.unl.cc.tallerpoou2.TallerPooU2</exec.mainClass>
+        <exec.mainClass>edu.unl.cc.tallerpoou2.Main</exec.mainClass>
     </properties>
     <name>tallerPooU2</name>
 </project>
