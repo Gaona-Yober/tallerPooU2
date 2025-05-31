@@ -15,7 +15,7 @@ import java.util.Map;
  *
  * @author author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
-public class Vehiculo {
+public abstract class Vehiculo {
     
     private long generadorViajeId;
 
