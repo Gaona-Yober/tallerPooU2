@@ -18,7 +18,9 @@ public class Moto extends Vehiculo {
     private float cilindrada;
 
     //construcutor
-    public Moto(float capacidadCarga, String placa, float consumoCombustible, LocalDate fechaMantenimiento, float cilindrada) {
+    public Moto(float capacidadCarga, String placa,
+                float consumoCombustible, LocalDate fechaMantenimiento,
+                float cilindrada) {
         super(capacidadCarga, placa, consumoCombustible, fechaMantenimiento);
         this.cilindrada = cilindrada;
     }
