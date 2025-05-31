@@ -1,4 +1,6 @@
 /*
+ * Repositorio de Git: https://github.com/Gaona-Yober/tallerPooU2/tree/master
+ * 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -8,13 +10,14 @@ package edu.unl.cc.tallerpoou2.modelo;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
-//import java.util.Date;
 
 /**
  *
  * @author author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
  */
 public class Vehiculo {
+    
+    private long generadorViajeId;
 
     //atributos
     private float capacidadCarga;
@@ -25,6 +28,11 @@ public class Vehiculo {
 
     //constructor
     public Vehiculo(float capacidadCarga, String placa, float consumoCombustible, LocalDate fechaMantenimiento) {
+        if (capacidadCarga < 0 || consumoCombustible < 0) {
+            throw new IllegalArgumentException("Capacidad de carga y consumo no pueden ser negativos.");
+        }
+        
+        this.generadorViajeId = 1;
         this.capacidadCarga = capacidadCarga;
         this.placa = placa;
         this.consumoCombustible = consumoCombustible;
@@ -76,22 +84,21 @@ public class Vehiculo {
     }
 
     //metodos
-    public void agregarViaje(Viaje viaje, Long id) {
-        this.viajes.put(id, viaje);
+    public void agregarViaje(Viaje viaje) {
+        if (viaje.getDistancia() < 0 || viaje.getPrecioCombustible()< 0) {
+            throw new IllegalArgumentException("Distancia y precio de combustible no pueden ser negativos.");
+        }
+        
+        long idViaje = generadorViajeId++;
+        this.viajes.put(idViaje, viaje);
     }
-    public Viaje obtenerViajes(Long id) {
-        return this.viajes.get(id);
-    }
-
-    //tostrong
+    
+    //tostring
     @Override
     public String toString() {
-        return "Vehiculo{" +
-                "capacidadCarga=" + capacidadCarga +
-                ", placa='" + placa + '\'' +
-                ", consumoCombustible=" + consumoCombustible +
-                ", fechaMantenimiento=" + fechaMantenimiento +
-                ", viajes=" + viajes +
-                '}';
+        return "Placa: " + placa +
+               " | Capacidad: " + capacidadCarga +
+               " | Consumo: " + consumoCombustible +
+               " | Último mantenimiento: " + fechaMantenimiento;
     }
 }

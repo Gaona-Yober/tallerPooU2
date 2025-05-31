@@ -10,4 +10,5 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>edu.unl.cc.tallerpoou2.TallerPooU2</exec.mainClass>
     </properties>
+    <name>tallerPooU2</name>
 </project>

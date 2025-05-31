@@ -1,90 +1,57 @@
+/*
+ * Repositorio de Git: https://github.com/Gaona-Yober/tallerPooU2/tree/master
+ */
 package edu.unl.cc.tallerpoou2.vista;
 
+/**
+ *
+ * @author Gaona Yober, Palma Wilson, Ortega Fernando, Chimbo Camila
+ */
+
+
 import edu.unl.cc.tallerpoou2.business.VehiculoFacade;
-import edu.unl.cc.tallerpoou2.modelo.Camion;
-import edu.unl.cc.tallerpoou2.modelo.Camioneta;
-import edu.unl.cc.tallerpoou2.modelo.Moto;
 import edu.unl.cc.tallerpoou2.modelo.Vehiculo;
 
 import java.time.LocalDate;
-import java.util.Scanner;
+import java.time.format.DateTimeFormatter;
+import java.util.Collection;
 
 public class VehiculoView {
-    private VehiculoFacade facade;
-    private Scanner scanner;
 
-    public VehiculoView(VehiculoFacade facade) {
-        this.facade = facade;
-        this.scanner = new Scanner(System.in);
+    private static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final VehiculoFacade facade = new VehiculoFacade();
+
+    public void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
     }
 
-    public void mostrarMenu() {
-        int opcion;
-        do {
-            System.out.println(" Menú de los vehiculos ");
-            System.out.println("Presionar 1 si quiero registrar su vehiculo");
-            System.out.println("Presionar 2 si quiere consultar el vehiculo");
-            System.out.println("Presione 0 si quiere salir");
-            System.out.print("Eliga la opcion: ");
-            opcion = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (opcion) {
-                case 1 -> registrarVehiculo();
-                case 2 -> consultarVehiculo();
-                case 0 -> System.out.println("Saliendo del sistema de vehiculos");
-                default -> System.out.println("Opcion no valida");
-            }
-        } while (opcion != 0);
+    public void mostrarError(String error) {
+        System.err.println("Error: " + error);
     }
 
-    private void registrarVehiculo() {
-        System.out.print("Tipos moto, camion y camioneta): ");
-        String tipo = scanner.nextLine().toLowerCase();
-
-        System.out.print("La placa: ");
-        String placa = scanner.nextLine();
-        System.out.print("La capacidad de carga: ");
-        float capacidad = scanner.nextFloat();
-        System.out.print("El consumo de combustible: ");
-        float consumo = scanner.nextFloat();
-        LocalDate hoy = LocalDate.now();
-
-        Vehiculo v = null;
-
-        switch (tipo) {
-            case "moto" -> {
-                System.out.print("Cilindrada: ");
-                int cilindrada = scanner.nextInt();
-                v = new Moto(capacidad, placa, consumo, hoy, cilindrada);
-            }
-            case "camion" -> {
-                System.out.print("El numero de ejes: ");
-                int ejes = scanner.nextInt();
-                v = new Camion(capacidad, placa, consumo, hoy, ejes);
-            }
-            case "camioneta" -> {
-                System.out.print("Es 4x4? seleccione(true/false): ");
-                boolean es4x4 = scanner.nextBoolean();
-                v = new Camioneta(capacidad, placa, consumo, hoy, es4x4);
-            }
-            default -> System.out.println("Tipo no valido");
+    public void mostrarVehiculos(Collection<Vehiculo> vehiculos) {
+        if (vehiculos.isEmpty()) {
+            System.out.println("No hay vehículos registrados.");
+            return;
         }
 
-        if (v != null) {
-            facade.registrarVehiculo(v);
-            System.out.println("Su vehiculo se ha registrado");
+        System.out.println("=== Vehículos Registrados ===");
+        for (Vehiculo vehiculo : vehiculos) {
+            System.out.println(vehiculo.toString());
+            mostrarAlertaMantenimiento(vehiculo);
         }
     }
 
-    private void consultarVehiculo() {
-        System.out.print("Placa del vehículo: ");
-        String placa = scanner.nextLine();
-        Vehiculo v = facade.consultarVehiculo(placa);
-        if (v != null) {
-            System.out.println("Vehículo encontrado: " + v.getPlaca() + " | Capacidad: " + v.getCapacidadCarga());
-        } else {
-            System.out.println("No se encontro el vehiculo");
+    public void mostrarCostoViaje(float total, float combustible, float mantenimiento) {
+        System.out.printf("Costo del viaje: $%.2f\n", total);
+        System.out.printf("Combustible: %.2f litros/km\n", combustible);
+        System.out.printf("Mantenimiento: $%.2f\n", mantenimiento);
+    }
+
+    public void mostrarAlertaMantenimiento(Vehiculo vehiculo) {
+        LocalDate fechaMantenimiento = vehiculo.getFechaMantenimiento();
+        if (facade.verificarMantenimiento(vehiculo)) {
+            System.out.println("¡Alerta! Mantenimiento pendiente desde " + fechaMantenimiento.format(FORMATO_FECHA));
         }
     }
 }

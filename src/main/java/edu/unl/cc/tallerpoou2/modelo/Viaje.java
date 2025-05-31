@@ -1,10 +1,12 @@
 /*
+ * Repositorio de Git: https://github.com/Gaona-Yober/tallerPooU2/tree/master
+ * 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package edu.unl.cc.tallerpoou2.modelo;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  *
@@ -14,11 +16,18 @@ public class Viaje {
 
     //atributos
     private float distancia;
-    private LocalDateTime fecha;
-    private float precioCombustible;
+    private LocalDate fecha;
+    private float precioCombustible; // $ / litro
 
     //contructor
-    public Viaje(float distancia, LocalDateTime fecha, float precioCombustible) {
+    public Viaje(float distancia, LocalDate fecha, float precioCombustible) {
+        if (distancia < 0) {
+            throw new IllegalArgumentException("La distancia no puede ser negativa.");
+        }
+        if (precioCombustible < 0) {
+            throw new IllegalArgumentException("El precio del combustible no puede ser negativo.");
+        }
+        
         this.distancia = distancia;
         this.fecha = fecha;
         this.precioCombustible = precioCombustible;
@@ -33,26 +42,23 @@ public class Viaje {
         this.distancia = distancia;
     }
 
-    public LocalDateTime getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
-    public void setFecha(LocalDateTime fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
     public float getPrecioCombustible() {
         return precioCombustible;
     }
+
     public void setPrecioCombustible(float precioCombustible) {
+        if (precioCombustible < 0) {
+            throw new IllegalArgumentException("El precio del combustible no puede ser negativo.");
+        }
+        
         this.precioCombustible = precioCombustible;
     }
-
-    @Override
-    public String toString() {
-        return "Viaje{" +
-                "distancia=" + distancia +
-                ", fecha=" + fecha +
-                ", precioCombustible=" + precioCombustible +
-                '}';
-    }
+    
 }

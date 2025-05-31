@@ -1,4 +1,6 @@
 /*
+ * Repositorio de Git: https://github.com/Gaona-Yober/tallerPooU2/tree/master
+ * 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -31,8 +33,6 @@ public class Camion extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Camion{" +
-                "numeroEjes=" + numeroEjes +
-                '}';
+        return "Camión | " + super.toString() + " | Ejes: " + numeroEjes;
     }
 }

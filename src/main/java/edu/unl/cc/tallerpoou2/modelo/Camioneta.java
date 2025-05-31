@@ -1,4 +1,6 @@
 /*
+ * Repositorio de Git: https://github.com/Gaona-Yober/tallerPooU2/tree/master
+ * 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -22,7 +24,7 @@ public class Camioneta extends Vehiculo {
     }
 
     //get set
-    public boolean isEs4x4() {
+    public boolean getEs4x4() {
         return es4x4;
     }
     public void setEs4x4(boolean es4x4) {
@@ -31,8 +33,6 @@ public class Camioneta extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Camioneta{" +
-                "es4x4=" + es4x4 +
-                '}';
+        return "Camioneta | " + super.toString()+ " | 4x4: " + (es4x4 ? "Sí" : "No");
     }
 }
