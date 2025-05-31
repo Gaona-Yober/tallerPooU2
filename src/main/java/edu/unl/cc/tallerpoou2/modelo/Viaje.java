@@ -19,6 +19,7 @@ public class Viaje {
     private LocalDate fecha;
     private float precioCombustible; // $ / litro
 
+
     //contructor
     public Viaje(float distancia, LocalDate fecha, float precioCombustible) {
         if (distancia < 0) {
@@ -57,8 +58,8 @@ public class Viaje {
         if (precioCombustible < 0) {
             throw new IllegalArgumentException("El precio del combustible no puede ser negativo.");
         }
-        
+
         this.precioCombustible = precioCombustible;
     }
-    
+
 }
