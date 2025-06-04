@@ -100,7 +100,7 @@ public class Main {
 
         try {
             Viaje viaje = new Viaje(distancia, fecha, precioCombustible);
-            float[] resultado = facade.registrarViaje(facade.buscarPorPlaca(placa), viaje);
+            float[] resultado = facade.calcularCostoViaje(facade.buscarPorPlaca(placa), viaje);
             view.mostrarCostoViaje(resultado[0], resultado[1], resultado[2]);
             view.mostrarAlertaMantenimiento(facade.buscarPorPlaca(placa));
         } catch (Exception e) {

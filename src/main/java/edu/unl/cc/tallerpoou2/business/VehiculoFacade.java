@@ -52,12 +52,6 @@ public class VehiculoFacade {
         vehiculoRepository.agregarVehiculo(camion);
     }
 
-    public float[] registrarViaje(Vehiculo vehiculo, Viaje viaje) {
-        Viaje viajePersisted = vehiculoRepository.agregarViaje(vehiculo, viaje);
-        float[] resultado = calcularCostoViaje(vehiculo, viaje);
-        return resultado;
-    }
-
     public float[] calcularCostoViaje(Vehiculo vehiculo, Viaje viaje) {
         if (viaje.getDistancia() < 0) {
             throw new IllegalArgumentException("La distancia no puede ser negativa.");

@@ -18,11 +18,10 @@ import java.util.Map;
  */
 public class VehiculoRepository {
     private final Map<Long, Vehiculo> vehiculos;
-    private final Map<String, Float> costosMantenimiento; // tipo -> costo base
+    static private final Map<String, Float> costosMantenimiento = new HashMap<>();; // tipo -> costo base
 
     public VehiculoRepository() {
         vehiculos = new HashMap<>();
-        costosMantenimiento = new HashMap<>();
 
         // Inicializar costos de mantenimiento por tipo de vehículo
         costosMantenimiento.put("Moto", 20f);

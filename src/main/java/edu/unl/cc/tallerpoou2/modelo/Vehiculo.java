@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public abstract class Vehiculo {
     
-    private long generadorViajeId;
+    private long viajeIdGenerador;
 
     //atributos
     private float capacidadCarga;
@@ -32,7 +32,7 @@ public abstract class Vehiculo {
             throw new IllegalArgumentException("Capacidad de carga y consumo no pueden ser negativos.");
         }
         
-        this.generadorViajeId = 1;
+        this.viajeIdGenerador = 1;
         this.capacidadCarga = capacidadCarga;
         this.placa = placa;
         this.consumoCombustible = consumoCombustible;
@@ -89,7 +89,7 @@ public abstract class Vehiculo {
             throw new IllegalArgumentException("Distancia y precio de combustible no pueden ser negativos.");
         }
         
-        long idViaje = generadorViajeId++;
+        long idViaje = viajeIdGenerador++;
         this.viajes.put(idViaje, viaje);
     }
     
